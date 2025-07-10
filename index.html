@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>展示页</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    .video, .image, .text {
+      margin-bottom: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: red;
+      font-weight: bold;
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 120px; /* 设置字体大小 */
+    }
+    h2 {
+      text-align: center;  /* 新增：使副标题居中 */
+      font-size: 60px; /* 设置字体大小 */
+    }
+
+    video {
+    display: block;
+    margin: 0 auto;
+    width: 80%; /* 或者指定固定宽度，如 600px */
+  }
+  .video-row {
+    display: flex;
+    justify-content: space-around; /* 两个视频在水平方向均匀排列 */
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .video-item {
+    text-align: center;
+  }
+
+  .video-item video {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .video-item img {
+    width: 100%;
+    max-width: 1920px;
+    height: 1080px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+  .video-item p {
+    font-size: 44px;
+    color: #0a0909;
+    margin-top: 15px;
+  }
+  </style>
+</head>
+<body>
+  <h1>Test2Dataset</h1>
+
+  <div class="video">
+    <h2>全流程演示</h2>
+    <video src="output/video/real_demo.mp4" controls width="80%"></video>
+  </div>
+
+  <div class="video-row">
+    <div class="video-item">
+      <h2>效果展示1</h2>
+      <img src="output/video/pedestrian.gif" alt="行人演示" width="100%">
+
+      <p>“在隧道场景中，当前轨道前方80m添加一个行人,从左到右穿过轨道；当前轨道右侧2m，前方30m添加一个行人，缓慢移动。标注所有目标。”</p>
+    </div>
+    <div class="video-item">
+      <h2>效果展示2</h2>
+      <img src="output/video/train.gif" alt="车辆演示" width="100%">
+
+      <p>“在露天场景中，当前轨道前方100m处添加一辆侧翻的列车，缓慢移动。标注所有目标”</p>
+    </div>
+  </div>
+
+</body>
+</html>
